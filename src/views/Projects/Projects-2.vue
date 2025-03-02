@@ -1,6 +1,7 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 
+const history = ref([])
 const newTodo = ref('')
 const todos = ref([])
 const currentTab = ref('all')
@@ -51,6 +52,20 @@ const itemCountText = computed(() => {
   }
   return `${todos.value.length}個項目`
 })
+
+onMounted(() => {
+  const savedTodos = JSON.parse(localStorage.getItem('todos'))
+  if (savedTodos) {
+    todos.value = savedTodos
+  }
+})
+watch(
+  todos,
+  (newTodos) => {
+    localStorage.setItem('todos', JSON.stringify(newTodos))
+  },
+  { deep: true },
+)
 </script>
 
 <template>
