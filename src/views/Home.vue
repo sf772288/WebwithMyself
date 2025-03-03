@@ -34,24 +34,33 @@
 
 <style scoped lang="scss">
 $breakpoint-md: 768px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
 .ppap {
   display: flex;
-  height: 100vh;
-  flex: 1;
+  flex-direction: row; /* 保持左右排列 */
+  justify-content: space-between; /* 確保左右兩區域有適當間距 */
+  align-items: center; /* 垂直居中 */
+  height: 100vh; /* 佔滿螢幕高度 */
+  width: 100%;
+  padding: 0 10px; /* 左右內邊距，避免內容貼邊 */
 }
 li {
   text-align: left;
 }
 .text {
-  flex: 1;
+  flex: 1; /* 讓文字區域佔用剩餘空間 */
   padding: 30px;
-  padding-left: 70px;
-  padding-right: 70px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -59,19 +68,21 @@ li {
 }
 
 img {
-  width: 450px;
+  width: 100%; /* 確保圖片不超過父容器寬度 */
+  max-width: 390px; /* 最大寬度限制 */
   height: auto;
-  max-width: 100%;
+  object-fit: contain; /* 確保圖片比例不變 */
 }
 .foo {
   background-color: pink; /* 背景顏色 */
   font-weight: bold;
   color: black;
-  text-align: center; /* 文字居中 */
-  padding: 15px; /* 上下內邊距 */
-  width: 100%; /* 寬度佔滿 */
+  text-align: center;
+  padding: 15px;
+  width: 100%;
   word-spacing: 30px;
 }
+
 @media (max-width: $breakpoint-md) {
   .ppap {
     flex-direction: column;

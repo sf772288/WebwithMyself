@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "rewrites": [
     {
@@ -6,3 +7,13 @@
     }
   ]
 }
+=======
+{
+  "rewrites": [
+    {
+      "source": "/:match*",
+      "destination": "/index.html"
+    }
+  ]
+}
+>>>>>>> 2341fa9 (新增載入動畫)

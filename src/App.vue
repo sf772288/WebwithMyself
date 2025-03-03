@@ -8,7 +8,7 @@
   </header>
   <nav>
     <div class="nav">
-      <router-link to="/">首頁</router-link>
+      <router-link to="/home">首頁</router-link>
       <router-link to="/project/project-1">作品介紹</router-link>
       <router-link to="/aboutme">關於我</router-link>
     </div>
