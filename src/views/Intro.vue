@@ -28,11 +28,14 @@ const showText = ref(true)
 // 把文字拆成單獨的字母
 const text = " I'm Jimmy "
 const letters = ref(text.split(''))
+const isMobile = ref(window.innerWidth <= 768)
 
 // 在組件掛載後，延遲顯示首頁
 
 onMounted(() => {
-  document.body.style.backgroundColor = 'gray'
+  if (isMobile.value) {
+    document.body.style.backgroundColor = 'lightblue' // 手機背景色
+  }
   setTimeout(() => {
     showText.value = false
     router.push('/home')
@@ -43,7 +46,7 @@ onUnmounted(() => {
 })
 </script>
 
-<style lang="scss" :deep(body)>
+<style lang="scss" scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 1s;
@@ -81,7 +84,7 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .fade-enter-active,
   .fade-leave-active {
-    transition: opacity 1s;
+    transition: opacity 0.5s; /* 縮短動畫時間 */
   }
   .fade-enter,
   .fade-leave-to {
@@ -90,35 +93,23 @@ onUnmounted(() => {
 
   #app {
     display: flex;
-    justify-content: center; /* 水平居中 */
+    justify-content: center;
     align-items: center;
-    width: 100vh;
+    width: 100vw; /* 修正 width 設錯 */
+    height: 100vh;
     margin: 0;
   }
 
   .loading-text {
-    font-size: 1em;
+    font-size: 1.5em; /* 手機版縮小字體 */
     text-align: center;
-    margin-top: 20%;
-    white-space: nowrap; /* 防止文字換行 */
+    margin-top: 40%;
+    white-space: nowrap;
   }
 
   .letter {
-    opacity: 0;
-    display: inline-block;
-    animation: fadeIn 0.5s forwards;
-    word-spacing: 0.1em; /* 字母間距 */
-    margin-right: 0.3em; /* 控制字母之間的距離 */
-    color: orange;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+    animation: fadeIn 0.3s forwards; /* 手機版縮短動畫 */
+    margin-right: 0.15em; /* 減少字母之間的距離 */
   }
 }
 </style>
