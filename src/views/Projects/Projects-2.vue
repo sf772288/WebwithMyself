@@ -121,20 +121,14 @@ watch(
 html {
   font-size: 23px;
   -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 $breakpoint-md: 768px;
 $dark: #333;
 $gray: #9f9a91;
 $light: #efefef;
-
-body {
-  min-height: 100vh;
-  background-color: #eee;
-  display: flex;
-  color: $dark;
-  background-image: linear-gradient(174edeg, #ffffff 46%, #ffffff 100%, #e8e8e8 100%);
-  letter-spacing: 0.07em;
-}
 
 h1 {
   text-align: center;

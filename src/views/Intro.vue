@@ -26,7 +26,7 @@ const router = useRouter()
 const showText = ref(true)
 
 // 把文字拆成單獨的字母
-const text = " I'm Jimmy "
+const text = '歡迎來到我的網站 '
 const letters = ref(text.split(''))
 const isMobile = ref(window.innerWidth <= 768)
 
@@ -35,6 +35,8 @@ const isMobile = ref(window.innerWidth <= 768)
 onMounted(() => {
   if (isMobile.value) {
     document.body.style.backgroundColor = 'lightblue' // 手機背景色
+  } else {
+    document.body.style.backgroundColor = 'lightblue'
   }
   setTimeout(() => {
     showText.value = false

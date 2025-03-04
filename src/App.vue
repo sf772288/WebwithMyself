@@ -3,7 +3,7 @@
 <template>
   <header>
     <div class="title">
-      <a class="title-font" href="/">何宇程的履歷</a>
+      <a class="title-font" href="/">何宇程的網站</a>
     </div>
   </header>
   <nav>
