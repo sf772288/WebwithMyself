@@ -266,9 +266,6 @@ li {
     padding: 1rem 0;
     border-bottom: 1px solid #eee;
     line-height: 1.5;
-    @media (max-width: 575px) {
-      padding-right: 1rem;
-    }
   }
   input {
     position: absolute;

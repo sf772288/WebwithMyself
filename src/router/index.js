@@ -13,6 +13,8 @@ const routes = [
     children: [
       { path: 'project-1', component: () => import('../views/Projects/Projects-1.vue') },
       { path: 'project-2', component: () => import('../views/Projects/Projects-2.vue') },
+      { path: 'project-3', component: () => import('../views/Projects/Projects-3.vue') },
+      { path: 'project-4', component: () => import('../views/Projects/Projects-4.vue') },
     ],
   },
   { path: '/aboutme', component: () => import('../views/Aboutme.vue') },
