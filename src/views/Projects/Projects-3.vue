@@ -230,6 +230,7 @@ const reloadPage = () => {
       <div class="score-container">
         <p class="myScore">遊戲分數:{{ score }}</p>
         <p class="myScore1">最高分數:{{ highestScore }}</p>
+        <p>如果咬到自己造成死亡，想繼續遊玩，請重新整理網頁。</p>
       </div>
 
       <div class="canvas-container">
