@@ -230,13 +230,20 @@ const reloadPage = () => {
       <div class="score-container">
         <p class="myScore">遊戲分數:{{ score }}</p>
         <p class="myScore1">最高分數:{{ highestScore }}</p>
-        <p>如果咬到自己造成死亡，想繼續遊玩，請重新整理網頁。</p>
+        <p>
+          若想重新遊玩，請重新整理頁面。 <br />
+          建議使用PC遊玩
+        </p>
       </div>
 
       <div class="canvas-container">
         <canvas ref="canvas"></canvas>
       </div>
     </div>
+    <h4>
+      心得:<br />
+      第一次製作一個小遊戲，讓我了解到canvas可以繪製圖形，也能利用canvas製作小遊戲。<br />在這專案我第一次嘗試讓手機、平板能夠在網站上執行，雖然功能並不理想但我會持續更新並努力改進!
+    </h4>
   </div>
 </template>
 
@@ -312,6 +319,9 @@ canvas {
   border: 5px solid lightgreen;
 }
 
+h4 {
+  text-align: center;
+}
 @media (max-width: 1024px) {
   .game-container {
     flex-direction: column; /* 確保在小螢幕上仍然是垂直排列 */

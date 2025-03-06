@@ -108,6 +108,10 @@ watch(
       </div>
     </div>
   </div>
+  <h4>
+    心得: <br />
+    雖然製作列表清單是一個簡單的邏輯概念就可以製作，<br />但這是我學習過後第一個可以獨立製作的專案，這讓我感受到滿滿的成就感!
+  </h4>
 </template>
 
 <style scoped lang="scss">
@@ -318,6 +322,9 @@ li {
       opacity: 1;
     }
   }
+}
+h4 {
+  text-align: center;
 }
 @media (max-width: $breakpoint-md) {
   .container {
